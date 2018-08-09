@@ -17,6 +17,7 @@ export default {
   config: {
     pages: [],
     window: {
+      //navigationStyle:'custom',
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: '舞蹈培训',
@@ -37,7 +38,7 @@ export default {
         {
           iconPath: '/static/resources/images/tab/course-shop.png',
           selectedIconPath: '/static/resources/images/tab/course-shop-active.png',
-          pagePath: 'pages/tabbar/course/index',
+          pagePath: 'pages/tabbar/course/kinds/index',
           text: '课程集市'
         },
         {

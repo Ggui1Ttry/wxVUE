@@ -18,6 +18,7 @@ module.exports = [
   {
     path: 'pages/tabbar/home/index', // 页面路径，同时是 vue 文件相对于 src 的路径
     config:{
+      navigationStyle: 'custom',
       navigationBarTitleText: '首页',
       enablePullDownRefresh: true,
       usingComponents:{
@@ -26,9 +27,21 @@ module.exports = [
     }
   },
   {
-    path: 'pages/tabbar/course/index', // 页面路径，同时是 vue 文件相对于 src 的路径
+    path: 'pages/tabbar/course/kinds/index', // 页面路径，同时是 vue 文件相对于 src 的路径
     config:{
+      navigationStyle:'default',
       navigationBarTitleText: '课程商店',
+      //enablePullDownRefresh: true,
+      usingComponents:{
+        ...commonUI,
+      }
+    }
+  },
+  {
+    path: 'pages/tabbar/course/tree/index', // 页面路径，同时是 vue 文件相对于 src 的路径
+    config:{
+      navigationStyle:'default',
+      navigationBarTitleText: '树选择',
       //enablePullDownRefresh: true,
       usingComponents:{
         ...commonUI,
@@ -39,6 +52,7 @@ module.exports = [
   {
     path: 'pages/tabbar/user/index', // 页面路径，同时是 vue 文件相对于 src 的路径
     config:{
+      navigationStyle:'default',
       navigationBarTitleText: '我的',
       //enablePullDownRefresh: true,
       usingComponents:{

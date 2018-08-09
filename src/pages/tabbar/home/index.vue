@@ -1,19 +1,24 @@
 <template>
   <div class="mContainer">
     <view>
-      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-        <block v-for="(item, index) in movies" :index="index" :key="key">
-          <swiper-item>
-            <image :src="item.url" class="slide-image" mode="aspectFill"/>
-          </swiper-item>
-        </block>
-      </swiper>
-      <zan-search
-        :searchStyle="search.searchStyle"
-        :inputStyle="search.inputStyle"
-        :keyword="search.inputValue"
-        :placeholder="search.placeholder"
-      />
+      <view>
+        <zan-search
+          class="search"
+          :searchStyle="search.searchStyle"
+          :inputStyle="search.inputStyle"
+          :keyword="search.inputValue"
+          :placeholder="search.placeholder"
+        />
+        <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+          <block v-for="(item, index) in movies" :index="index" :key="key">
+            <swiper-item>
+              <image :src="item.url" class="slide-image" mode="aspectFill"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
+
       <div>
         <view class="zan-font-12" :style="{'text-align':'center',padding:'2px'}">{{landscape.title}}</view>
         <scroll-view  class="scroll_box"  scroll-x  >
@@ -48,14 +53,13 @@ export default {
   data () {
     return {
       refresh:{
-        //downLoading:false,
         pullLoading:false
       },
       search:{
         inputValue:'',
         placeholder:'请输入想要查找课程',
-        searchStyle: "height: 88rpx; padding: 0 30rpx; background:#F2F2F2;",
-        inputStyle:"height: 56rpx; border-radius: 8rpx;"
+        searchStyle: "height: 60rpx; padding: 0 30rpx;",
+        inputStyle:"height: 46rpx; border-radius: 8rpx;text-align:center;"
       },
       landscape:{
         title:'HOT SALE',
@@ -130,7 +134,7 @@ export default {
       wx.hideNavigationBarLoading() //完成停止加载
       wx.stopPullDownRefresh();
       //$this.refresh.downLoading = false;
-    },2000)
+    },600)
 
   },
 
@@ -143,7 +147,7 @@ export default {
     this.refresh.pullLoading = true;
     setTimeout(function () {
       $this.refresh.pullLoading = false;
-    },2000)
+    },600)
   },
 
 

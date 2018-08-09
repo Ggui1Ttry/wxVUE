@@ -34,3 +34,14 @@
 .cardView{
   flex:1;
 }
+.search{
+  position: absolute;
+  left: 30rpx;
+  top: 10rpx;
+  box-sizing: border-box;
+  width: 690rpx;
+  z-index: 2;
+  border-radius: 45rpx;
+  background-color: #fff;
+  box-shadow: 0 0 1rpx #ccc;
+}
