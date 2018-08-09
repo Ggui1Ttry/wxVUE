@@ -19,7 +19,7 @@ export default {
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '舞蹈培训',
       navigationBarTextStyle: 'black'
     },
     tabBar: {
@@ -31,25 +31,19 @@ export default {
         {
           iconPath: '/static/resources/images/tab/home.png',
           selectedIconPath: '/static/resources/images/tab/home-active.png',
-          pagePath: 'pages/index',
+          pagePath: 'pages/tabbar/home/index',
           text: '首页'
         },
-        // {
-        //   iconPath: '/static/resources/images/tab/order.png',
-        //   selectedIconPath: '/static/resources/images/tab/order-active.png',
-        //   pagePath: 'pages/index',
-        //   text: '分类'
-        // },
         {
-          iconPath: '/static/resources/images/tab/cart.png',
-          selectedIconPath: '/static/resources/images/tab/cart-active.png',
-          pagePath: 'pages/counter',
-          text: '购物车'
+          iconPath: '/static/resources/images/tab/course-shop.png',
+          selectedIconPath: '/static/resources/images/tab/course-shop-active.png',
+          pagePath: 'pages/tabbar/course/index',
+          text: '课程集市'
         },
         {
           iconPath: '/static/resources/images/tab/user.png',
           selectedIconPath: '/static/resources/images/tab/user-active.png',
-          pagePath: 'pages/counter',
+          pagePath: 'pages/tabbar/user/index',
           text: '我的'
         }
       ]

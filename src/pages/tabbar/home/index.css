@@ -1,0 +1,36 @@
+.swiper {
+  height: 300rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.scroll_box{
+  width: 100%;
+  height: 200rpx;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+}
+.item_list{
+  width: 140rpx;
+  height: 140rpx;
+  padding: 16rpx;
+  display: inline-block;
+  justify-content:center;
+}
+.circle_item_img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius:50%;
+}
+.circle_item_label{
+  text-align: center;
+}
+.groupSale{
+  display: flex;
+}
+.cardView{
+  flex:1;
+}

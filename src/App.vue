@@ -30,4 +30,8 @@ export default {
   -webkit-transition: width 2s;
   -o-transition: width 2s;
 }
+.fragment{
+  display: block;
+  margin-top: 15px;
+}
 </style>
