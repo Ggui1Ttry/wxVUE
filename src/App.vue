@@ -13,8 +13,9 @@ export default {
 </script>
 
 <style>
-  @import './libs/index.wxss';
-  .container {
+  @import 'libs/zanui.wxss';
+  @import 'libs/weui.wxss';
+  .Appcontainer {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -33,5 +34,12 @@ export default {
 .fragment{
   display: block;
   margin-top: 15px;
+}
+.fragment5{
+  display: block;
+  margin-top: 5px;
+}
+.hide{
+  display: none;
 }
 </style>

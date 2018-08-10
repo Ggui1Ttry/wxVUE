@@ -21,7 +21,7 @@
       </zan-cell-group>
       <zan-cell-group class="fragment"  title-width="90">
         <block v-for="(item, index) in optionList[user.role]" :index="index" :key="key">
-          <zan-cell :title="item.labelMain" :value="item.labelPart" is-link :url="item.link"></zan-cell>
+          <zan-cell :title="item.labelMain" :value="item.labelPart" is-link @click="forwardPage(item)" :url="item.link"></zan-cell>
         </block>
       </zan-cell-group>
     </view>
@@ -50,7 +50,8 @@
             {
               labelMain:'报名课程直播',
               labelPart:'点击报名',
-              link:'',
+              link:'/pages/tabbar/course/kinds/index',
+              isTab:true,
               code:'001'
             },
             {
@@ -108,6 +109,16 @@
       phoneBind
     },
     methods:{
+      forwardPage (item) {
+        console.log('item:',item)
+        const isTab = item.isTab == undefined ? false: item.isTab;
+        //$router.push({ path: item.link, isTab: isTab })
+        if (isTab){
+          wx.switchTab({
+            url: item.link
+          })
+        }
+      },
       consultingService(){
         wx.makePhoneCall({
           phoneNumber: '15371333230' //仅为示例，并非真实的电话号码

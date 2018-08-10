@@ -1,3 +1,5 @@
+@import 'limitshop.css';
+@import 'product.css';
 .swiper {
   height: 300rpx;
   width: 100%;
@@ -37,11 +39,33 @@
 .search{
   position: absolute;
   left: 30rpx;
-  top: 10rpx;
+  top: 15rpx;
   box-sizing: border-box;
   width: 690rpx;
   z-index: 2;
   border-radius: 45rpx;
   background-color: #fff;
   box-shadow: 0 0 1rpx #ccc;
+}
+
+.server {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 22rpx;
+  background-color: #fff;
+}
+.server_item {
+  display: flex;
+  font-size: 0.7rem;
+  height: 92rpx;
+  align-items: center;
+}
+.header_icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+.hotSale{
+  background-color: white;
 }

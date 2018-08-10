@@ -18,9 +18,24 @@
         </swiper>
       </view>
 
+      <view class="server">
+        <view class="server_item">
+          <image class="header_icon" src="/static/images/minlogo.png"></image>
+          <text>自营品牌</text>
+        </view>
+        <view class="server_item">
+          <image class="header_icon" src="/static/images/minlogo.png"></image>
+          <text>无忧学习，永久看单</text>
+        </view>
+        <view class="server_item">
+          <image class="header_icon" src="/static/images/minlogo.png"></image>
+          <text>48小时快速退款</text>
+        </view>
+      </view>
+
 
       <div>
-        <view class="zan-font-12" :style="{'text-align':'center',padding:'2px'}">{{landscape.title}}</view>
+        <view class="zan-font-12 hotSale fragment5" :style="{'text-align':'center',padding:'2px'}">{{landscape.title}}</view>
         <scroll-view  class="scroll_box"  scroll-x  >
           <block v-for="(item, index) in landscape.sales" :index="index" :key="key">
             <div class="item_list">
@@ -30,15 +45,50 @@
           </block>
         </scroll-view>
       </div>
-      <i-card title="优惠券" extra="立即领取" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+      <i-card class="fragment5" title="优惠券" extra="立即领取" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
         <view class="circle_item_label" slot="content">满99元使用</view>
       </i-card>
-      <div class="groupSale">
-        <div class="cardView"  v-for="(item, index) in groupSale" :index="index" :key="key">
-          <group-item
-            :showProp="item"
-          ></group-item>
-        </div>
+
+      <view>
+        <navigator url="/pages/index/receive/receive" hover-class="none">
+          <view class="countDown">
+            <view class="count-left">
+              <view class="title">网课限时购</view>
+              <view class="count-m">
+                <text class="hour">02</text>
+                <text class="colon">:</text>
+                <text class="mins">58</text>
+                <text class="colon">:</text>
+                <text class="secs">37</text>
+              </view>
+              <view class="next-title">
+                <text>下一场</text>
+                <text>18:00</text>
+                <text>开始</text>
+              </view>
+            </view>
+            <view class="count-right">
+              <image src="/static/images/shuihu.jpg" mode="aspectFit"></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+
+      <div class="bd_list">
+        <view class="product-list">
+          <view class="product">
+            <div   v-for="(item, index) in groupSale" :index="index" :key="key">
+              <navigator url="/pages/goods/index" hover-class="none">
+                <view :class="[index%2==0?'pdt-left':'pdt-right']">
+                  <image class="pdt-img" src="/static/images/wudao.jpg"></image>
+                  <text class="pdt-name zan-font-12">{{item.groupProgress}}</text>
+                  <view class=" zan-font-12">单价:{{item.singlePrice}}</view>
+                  <view class=" zan-font-12">团价:{{item.groupPrice}}</view>
+                </view>
+              </navigator>
+            </div>
+          </view>
+        </view>
       </div>
     </view>
     <zan-loadmore v-if="refresh.pullLoading" type="loading" text="努力加载中"></zan-loadmore>
@@ -49,6 +99,7 @@
   //# 由于 mpvue component 暂不支持全局注册，暂时只能使用局部注册
 import card from '@/components/card';
 import groupItem from '@/components/sale/groupItem';
+
 export default {
   data () {
     return {
@@ -159,6 +210,6 @@ export default {
 <style scoped>
   @import 'index.css';
   .mContainer{
-
+    background-color: #F9F9F9;
   }
 </style>
