@@ -1,9 +1,9 @@
 <template>
     <div class="mContainer">
         <view class="tab">
-          <view class="phoneBind">
-            <phoneBind  v-if="!user.bindPhone"></phoneBind>
-          </view>
+          <!--<view class="phoneBind">-->
+            <!--<phoneBind  v-if="!user.bindPhone"></phoneBind>-->
+          <!--</view>-->
           <zan-tab
             class="tab-list"
             :scroll="scroll"
@@ -16,7 +16,7 @@
         <view class="swiperContainer">
           <swiper  class="swiper" :style="{'height':swiperheight}" @change="switchTab" :current-item-id="selectedId" >
             <swiper-item class="swiperItem"  :item-id="item.id" v-for="(item, index) in list" :index="item.id" :key="item.id">
-              <scroll-view class="swiperScroll" scroll-y="true">
+              <scroll-view class="swiperScroll" :style="{'height':swiperheight}" scroll-y="true">
                 <order-list :order="item"></order-list>
               </scroll-view>
             </swiper-item>
@@ -65,7 +65,6 @@
               scroll:true,
               height:'44',
               selectedId:'all',
-              toViewId:'all',
               tabHeight:45,
               viewHeight:0
             };
@@ -83,29 +82,34 @@
           handleTabChange(e){
             //e.mp.detail;
             console.log("e:",e.mp)
-            //this.toViewId = e.mp.detail;
-            this.selectedId = e.mp.detail;
+            if (e.mp.detail!=this.selectedId){
+              this.selectedId = e.mp.detail;
+            }
           },
           switchTab(e){
             console.log("e:",e)
-            this.selectedId = e.mp.detail.currentItemId;
+            if(e.mp.detail.currentItemId!=this.selectedId){
+              this.selectedId = e.mp.detail.currentItemId;
+              //this._handleScroll(e.mp.detail.currentItemId)
+            }
+            //this.triggerEvent('handleTabChange', selectedId);
           }
         },
 
       onLoad(){
-
+        this.selectedId='all';
         var that = this;
         console.log('that:',that)
         wx.getSystemInfo({
           success: function (res) {
-            that.viewHeight =  res.windowHeight - (res.windowWidth / 750) * 94
+            that.viewHeight =  res.windowHeight // - (res.windowWidth / 750) * 94
           }
         })
         //创建节点选择器
         var query = wx.createSelectorQuery();
         //选择id
 
-        query.select('.tab-list').boundingClientRect(function (rect) {
+        query.select('.tab').boundingClientRect(function (rect) {
           that.tabHeight = rect.height
         }).exec();
       }

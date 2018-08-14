@@ -22,7 +22,10 @@ Component({
     },
     selectedId: {
       type: [String, Number],
-      value: ''
+      value: '',
+      observer: function (newVal, oldVal) {
+        this._handleScroll(newVal)
+      }
     }
   },
 
@@ -39,6 +42,7 @@ Component({
       query.select('#scroll-view').boundingClientRect();
       query.select('#scroll-view').scrollOffset();
       query.exec(function (res) {
+        if(res[2]==null||res[2]['scrollLeft']==undefined) return;
         _this.setData({
           scrollLeft: res[2].scrollLeft + res[0].left + res[0].width / 2 - res[1].width / 2
         });

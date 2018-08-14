@@ -117,6 +117,10 @@
           wx.switchTab({
             url: item.link
           })
+        }else {
+          wx.navigateTo({
+            url: item.link
+          })
         }
       },
       consultingService(){
