@@ -57,7 +57,7 @@
             {
               labelMain:'我的订单',
               labelPart:'查看全部订单',
-              link:'',
+              link:'/pages/order/index',
               code:'002'
             },
             {

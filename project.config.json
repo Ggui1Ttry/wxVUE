@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
-	"appid": "wx719e3a98e9691527",
+	"appid": "wx963df07bb597e4a0",
 	"projectname": "twpwx",
 	"condition": {
 		"search": {

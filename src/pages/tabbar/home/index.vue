@@ -9,7 +9,7 @@
           :keyword="search.inputValue"
           :placeholder="search.placeholder"
         />
-        <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+        <swiper class="swiper" :indicator-dots="true" :autoplay="true" :circular="true" :interval="5000" :duration="1000">
           <block v-for="(item, index) in movies" :index="index" :key="key">
             <swiper-item>
               <image :src="item.url" class="slide-image" mode="aspectFill"/>

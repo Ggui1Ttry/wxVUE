@@ -4,6 +4,8 @@ const iview = {
   'i-notice-bar': '/libs/iview/notice-bar/index',
   'i-card': '/libs/iview/card/index',
   'i-avatar': "/libs/iview/avatar/index",
+  'i-sticky': '/libs/iview/sticky/index',
+  'i-sticky-item': '/libs/iview/sticky-item/index'
 };
 
 
@@ -16,6 +18,8 @@ const zanUI = {
   'zan-icon': '/libs/zanUI/icon/index',
   'zan-button': '/libs/zanUI/btn/index',
   'zan-loadmore': '/libs/zanUI/loadmore/index',
+  'zan-tab':'/libs/zanUI/tab/index',
+  'zan-card': '/libs/zanUI/card/index'
 }
 
 
